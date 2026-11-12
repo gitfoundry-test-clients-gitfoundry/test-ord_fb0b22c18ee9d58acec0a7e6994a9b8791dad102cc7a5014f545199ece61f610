@@ -1,2 +1,22 @@
-# test-ord_fb0b22c18ee9d58acec0a7e6994a9b8791dad102cc7a5014f545199ece61f610
-Website for Staging Rehearsal Tide Plumbing — built by GitFoundry
+# Staging Rehearsal Tide Plumbing
+
+Your website built by [GitFoundry](https://gitfoundry.co.uk).
+
+## Your files
+
+- `404.html`
+- `favicon.svg`
+- `index.html`
+- `mobile-nav.js`
+- `og-image.png`
+- `robots.txt`
+- `sitemap.xml`
+- `styles.css`
+
+## Making changes
+
+Edit any HTML or CSS file directly on GitHub, or [contact GitFoundry](https://gitfoundry.co.uk/contact.html) for updates.
+
+## Transferring this repository
+
+If you'd like to own this repository outright, [contact GitFoundry](https://gitfoundry.co.uk/contact.html) with your GitHub username.

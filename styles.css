@@ -1,0 +1,1045 @@
+/* Composable design stylesheet for style "arcade-f65b0b91-bdd1-458d-8775-2f6fa8a9d4b1". */
+/* Compiled from reviewed style data by lib/design-css.mjs. The model never writes this file. */
+:root {
+  --colour-dominant: #ffffff;
+  --colour-on-dominant: #4b5563;
+  --colour-supporting: #111827;
+  --colour-on-supporting: #ffffff;
+  --colour-accent: #2142e7;
+  --colour-on-accent: #ffffff;
+  --colour-muted: #70747d;
+  --colour-border: #111827;
+  --colour-focus: #4b5563;
+  --colour-on-dark-focus: #ffffff;
+  --colour-error: #6b0014;
+  --colour-success: #0b3d20;
+  --font-display: "Petrona", Georgia, "Times New Roman", serif;
+  --font-body: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --text-display: clamp(3.482rem, 3.0140000000000002rem + 2.34vw, 5.12rem);
+  --leading-display: 1.14;
+  --tracking-display: -0.02em;
+  --weight-display: 400;
+  --text-h1: clamp(2.176rem, 1.8834285714285715rem + 1.4628571428571429vw, 3.2rem);
+  --leading-h1: 1.19;
+  --tracking-h1: -0.015em;
+  --weight-h1: 400;
+  --text-h2: clamp(1.375rem, 1.1964285714285714rem + 0.8928571428571428vw, 2rem);
+  --leading-h2: 1.24;
+  --tracking-h2: -0.01em;
+  --weight-h2: 400;
+  --text-h3: clamp(1.125rem, 1.0892857142857142rem + 0.17857142857142858vw, 1.25rem);
+  --leading-h3: 1.34;
+  --tracking-h3: 0em;
+  --weight-h3: 400;
+  --text-body: clamp(1rem, 0.9642857142857143rem + 0.17857142857142858vw, 1.125rem);
+  --leading-body: 1.56;
+  --tracking-body: 0em;
+  --weight-body: 400;
+  --text-small: 0.875rem;
+  --leading-small: 1.46;
+  --tracking-small: 0em;
+  --weight-small: 400;
+  --text-label: clamp(0.875rem, 0.8392857142857143rem + 0.17857142857142858vw, 1rem);
+  --leading-label: 1.4;
+  --tracking-label: 0.01em;
+  --weight-label: 500;
+  --text-button: 1rem;
+  --leading-button: 1.2;
+  --tracking-button: 0em;
+  --weight-button: 500;
+  --measure: 79ch;
+  --space-0: 0.25rem;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+  --space-8: 6rem;
+  --gutter: clamp(1rem, 0.7142857142857143rem + 1.4285714285714286vw, 2rem);
+  --section-gap: clamp(3rem, 2.142857142857143rem + 4.285714285714286vw, 6rem);
+  --content-max: 72rem;
+  --radius: 0rem;
+  --shadow: none;
+  --colour-action: var(--colour-accent);
+  --colour-on-action: var(--colour-on-accent);
+  --card-border: 1px solid var(--colour-border);
+  --card-shadow: none;
+  --control-min-height: 44px;
+  --motion-fast: 120ms;
+  --motion-normal: 200ms;
+  --motion-slow: 320ms;
+  --easing: cubic-bezier(0.2, 0, 0, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  background: var(--colour-dominant);
+  color: var(--colour-on-dominant);
+  overflow-wrap: anywhere;
+}
+
+/* anywhere, not break-word: only anywhere shrinks the min-content size, so a
+   long word in a grid or flex child wraps instead of widening its track and
+   bursting the page under 200% text enlargement. */
+h1, h2, h3 { text-wrap: balance; overflow-wrap: anywhere; }
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-h1);
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1)em;
+  margin-block: var(--space-6) var(--space-4);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2)em;
+  margin-block: var(--space-6) var(--space-3);
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3)em;
+  margin-block: var(--space-5) var(--space-3);
+}
+
+p { max-width: var(--measure); }
+
+small {
+  font-size: var(--text-small);
+  line-height: var(--leading-small);
+}
+
+label, .form-label {
+  display: block;
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label)em;
+  margin-block-end: var(--space-1);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display)em;
+  /* An inner page's title sits outside a container: keep it inside the same gutters. */
+  width: min(100% - (2 * var(--gutter)), var(--content-max));
+  margin-inline: auto;
+  padding-block-start: var(--section-gap);
+  overflow-wrap: anywhere;
+}
+
+/* Semantic surfaces: every section colour resolves through these variables,
+   so text always sits on its measured on-colour. */
+[data-surface="dominant"] {
+  --surface: var(--colour-dominant);
+  --ink: var(--colour-on-dominant);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+[data-surface="supporting"] {
+  --surface: var(--colour-supporting);
+  --ink: var(--colour-on-supporting);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+[data-surface] :is(h1, h2, h3, p) { color: inherit; }
+
+/* Plain links inherit their surface ink. Button-links are excluded: their
+   colours come from the button rules below, and this selector would otherwise
+   out-specify .btn--primary and paint accent buttons in body text. */
+[data-surface] a:not(.btn) { color: inherit; }
+
+/* Document rhythm: tight groups, generous separation. */
+.container {
+  width: min(100% - (2 * var(--gutter)), var(--content-max));
+  margin-inline: auto;
+}
+
+main > section { padding-block: var(--section-gap); }
+
+/* Hero compositions. */
+.hero-centered__inner,
+.hero-split__inner,
+.hero-banner__inner {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.hero-centered__headline,
+.hero-split__headline,
+.hero-banner__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display)em;
+  margin-block: 0 var(--space-3);
+  /* No ch cap here: ch scales with font-size, so it cannot constrain a
+     headline that is simply too large for its copy. Length is governed by the
+     display scale in the style record instead. */
+}
+
+.hero-note {
+  padding: var(--space-5);
+  border-radius: var(--radius);
+}
+
+/* Feature compositions. */
+.features-list__items { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+.features-grid__cards { display: grid; gap: var(--space-5); }
+.feature-card {
+  padding: var(--space-5);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* Founder composition. */
+.founder-story__inner { display: grid; gap: var(--space-5); align-items: start; }
+.founder-story__image img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
+
+/* Process compositions. */
+.process-steps__list,
+.how-it-works__steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+
+/* FAQ disclosures. */
+details.faq-item { border-block-end: 1px solid var(--colour-border); padding-block: var(--space-3); }
+details.faq-item summary {
+  cursor: pointer;
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+  padding-block: var(--space-1);
+  min-height: 44px;
+}
+
+/* Conversion compositions. */
+.waitlist-capture__row { display: grid; gap: var(--space-3); }
+.contact-block__inner { display: grid; gap: var(--space-5); }
+
+/* Section roots: in-page anchors land with breathing room. Listing every
+   root also keeps validator class coverage honest on the new path. */
+.hero-centered,
+.hero-split,
+.hero-banner,
+.features-list,
+.features-grid,
+.problem-solution,
+.founder-story,
+.process-steps,
+.how-it-works,
+.faq-accordion,
+.cta-banner,
+.waitlist-capture,
+.contact-block,
+.editorial-intro,
+.manifesto-band,
+.outcomes-band,
+.capability-rows,
+.work-index,
+.image-triptych,
+.client-logos { scroll-margin-top: var(--space-4); }
+
+.waitlist-capture__inner { display: grid; gap: var(--space-4); align-content: start; }
+
+/* Section element vocabulary: every class the catalogue renderers emit gets
+   a token-driven rule, so validator class coverage holds on the new path. */
+.hero-centered__copy,
+.hero-split__text {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+}
+
+.hero-centered__kicker,
+.process-steps__eyebrow,
+.founder-story__eyebrow,
+.waitlist-capture__eyebrow,
+.problem-solution__label {
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label)em;
+  margin-block: 0 var(--space-2);
+}
+
+.hero-centered__sub,
+.hero-split__sub,
+.hero-banner__sub {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  margin-block: 0 var(--space-4);
+}
+
+.hero-centered__ctas,
+.hero-split__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* WCAG 2.5.8 gives a standalone link a 24px minimum target. Declare it: left
+   to the body leading, a style with tighter leading drops under the floor. */
+.hero-centered__text-link {
+  font-weight: var(--weight-button);
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.hero-note {
+  padding: var(--space-5);
+  border-radius: var(--radius);
+}
+
+.hero-note__label {
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  letter-spacing: var(--tracking-label)em;
+  margin-block: 0 var(--space-2);
+}
+
+.hero-note__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+  line-height: var(--leading-h3);
+  margin-block: 0 var(--space-2);
+}
+
+.hero-note__rule {
+  border-block-start: 1px solid currentColor;
+  opacity: 0.55;
+  margin-block: var(--space-3);
+}
+
+.hero-note__body { margin-block: 0 var(--space-2); }
+.hero-note__signoff { font-size: var(--text-small); margin-block: 0; }
+
+.hero-split__image img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
+
+.features-list__title,
+.features-grid__title,
+.process-steps__title,
+.how-it-works__title,
+.faq-accordion__title,
+.founder-story__title,
+.contact-block__title,
+.waitlist-capture__title,
+.problem-solution__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2)em;
+  margin-block: 0 var(--space-4);
+}
+
+.hero-centered__inner:not(:has(.hero-note)) { grid-template-columns: 1fr; }
+
+.features-list__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  border-block-start: 1px solid var(--colour-border);
+}
+
+.features-list__item:last-child { border-block-end: 1px solid var(--colour-border); }
+
+.features-list__num {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+}
+
+.features-list__body { display: grid; gap: var(--space-1); align-content: start; }
+
+.features-list__name,
+.feature-card__title,
+.process-step__heading,
+.how-step__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+  line-height: var(--leading-h3);
+  margin-block: 0 var(--space-1);
+}
+
+.features-list__desc,
+.feature-card__desc,
+.process-step__desc,
+.how-step__desc { margin-block: 0; }
+
+.features-list__bullets,
+.feature-card__bullets,
+.founder-story__signals,
+.contact-block__signals {
+  margin: var(--space-2) 0 0;
+  padding-inline-start: var(--space-4);
+  display: grid;
+  gap: var(--space-1);
+}
+
+.problem-solution__inner { display: grid; gap: var(--space-5); }
+.problem-solution__problem, .problem-solution__answer { display: grid; gap: var(--space-2); align-content: start; }
+.problem-solution__body { margin-block: 0; }
+.problem-solution__product {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+  margin-block: 0;
+}
+
+.founder-story__text { display: grid; gap: var(--space-2); align-content: start; }
+.founder-story__body { margin-block: 0; }
+.founder-story__subhead {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+  margin-block: var(--space-3) var(--space-1);
+}
+.founder-story__steps { margin: 0; padding-inline-start: var(--space-4); display: grid; gap: var(--space-1); }
+.founder-story--no-image .founder-story__inner { grid-template-columns: 1fr; }
+
+.process-steps__intro { display: grid; gap: var(--space-1); margin-block-end: var(--space-4); }
+.process-step,
+.how-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3);
+}
+.process-step__body { display: grid; gap: var(--space-1); align-content: start; }
+.process-step__num,
+.how-step__num {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-h2);
+  line-height: 1;
+}
+
+.faq-accordion__list { display: grid; }
+.faq-item__question { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); cursor: pointer; list-style: none; }
+.faq-item__question::-webkit-details-marker { display: none; }
+.faq-item__question::after { content: "+"; flex: 0 0 auto; }
+details[open] > .faq-item__question::after { content: "−"; }
+.faq-item__answer p { margin-block: var(--space-2) 0; }
+
+.cta-banner__inner { display: grid; gap: var(--space-3); justify-items: start; }
+.cta-banner__hook { font-size: var(--text-h3); line-height: var(--leading-h3); margin-block: 0; }
+
+.waitlist-capture__intro { display: grid; gap: var(--space-1); }
+.waitlist-capture__form { display: grid; gap: var(--space-3); }
+.waitlist-capture__label { margin-block-end: 0; }
+/* 2026-09-10 — was white-space: nowrap, which defeated the grid/flex
+   blowout guard (.waitlist-capture__row > *, line ~562) that every other
+   button in this design system relies on to wrap instead of bursting the
+   page under text enlargement. Explicit white-space: normal documents that
+   decision and keeps this selector defined (validate-site.mjs requires
+   every rendered class to have a rule). */
+.waitlist-capture__btn { white-space: normal; }
+
+.contact-block__info { display: grid; gap: var(--space-3); align-content: start; }
+.contact-block__about,
+.contact-block__hours,
+.contact-block__promise { margin-block: 0; }
+.contact-block__form { display: grid; gap: 0; align-content: start; }
+
+.site-footer__inner { display: grid; gap: var(--space-2); }
+.site-footer__brand { font-family: var(--font-display); font-weight: var(--weight-h3); }
+.site-footer__tagline,
+.site-footer__built { font-size: var(--text-small); margin-block: 0; }
+/* The credit link must read on the footer's own surface, not the browser's default blue. */
+.site-footer__built a { color: inherit; text-decoration: underline; }
+
+/* Actions: primary rides the accent pair, secondary the supporting pair. */
+.btn, button {
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-button);
+  line-height: var(--leading-button);
+  letter-spacing: var(--tracking-button)em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--control-min-height);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btn--primary {
+  background: var(--colour-action);
+  color: var(--colour-on-action);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: currentColor;
+  color: var(--colour-supporting);
+}
+
+[data-surface="supporting"] .btn--ghost { color: var(--colour-on-supporting); }
+
+/* Form controls. */
+.form-input, .form-textarea, .waitlist-capture__input {
+  width: 100%;
+  min-height: var(--control-min-height);
+  padding: var(--space-3);
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius);
+}
+
+.form-field { display: grid; gap: var(--space-1); margin-block-end: var(--space-4); }
+.form-error { color: var(--colour-error); font-weight: 600; }
+
+/* Grid/flex blowout guard: text-bearing grid and flex children must shrink
+   below their min-content size, or a long word bursts the page under text
+   enlargement instead of wrapping. */
+.hero-centered__inner > *,
+.hero-split__inner > *,
+.features-grid__cards > *,
+.founder-story__inner > *,
+.contact-block__inner > *,
+.waitlist-capture__inner > *,
+.waitlist-capture__row > *,
+.problem-solution__inner > *,
+.cta-banner__inner > *,
+.hero-centered__ctas > *,
+.hero-split__ctas > * {
+  min-width: 0;
+}
+
+/* Navigation tokens for the polish-installed header. The header block owns
+   colours and type size; these additive rules own layout and touch targets.
+   (An earlier .site-nav block styled nothing — the header emits
+   .primary-nav — so these target the real classes.) */
+.primary-nav { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.primary-nav a { text-decoration: none; padding-block: 0.25rem; }
+.primary-nav a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* The shared header toggle ships at 38px; the product default is 44px.
+   min-height here does not disturb the header block's own box rules. */
+.menu-toggle { min-height: 44px; }
+
+/* Footer. */
+.site-footer { padding-block: var(--section-gap) var(--space-5); }
+
+/* State changes only: focus, hover, pressed. No entrance choreography, and
+   never opacity zero as a prerequisite for visible content. */
+a, button, .btn, input, textarea, summary {
+  transition:
+    color var(--motion-fast) var(--easing),
+    background-color var(--motion-normal) var(--easing),
+    border-color var(--motion-fast) var(--easing),
+    box-shadow var(--motion-normal) var(--easing);
+}
+
+a:hover { text-decoration-thickness: 2px; }
+.btn--primary:hover { filter: brightness(1.06); }
+.btn--primary:active { filter: brightness(0.96); }
+.btn:disabled, button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+:focus-visible {
+  outline: 3px solid var(--colour-focus);
+  outline-offset: 2px;
+}
+
+[data-surface="supporting"] :focus-visible { outline-color: var(--colour-on-dark-focus); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ── Hero atmosphere ───────────────────────────────────────────────────────
+   A colour field drawn from the style's own palette. No image file, nothing
+   licensed, nothing to store, and each style tints itself. Overlapping soft
+   radial gradients read as depth the way a photograph does, without one.
+   The scrim is what guarantees the text contrast — a gradient behind text
+   cannot be measured, so it is never trusted on its own. */
+.hero-atmosphere {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: end;
+  min-height: min(86vh, 44rem);
+  overflow: hidden;
+  background: var(--colour-dominant);
+  color: var(--colour-on-dominant);
+}
+
+.hero-atmosphere__field {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(120% 90% at 14% 12%, color-mix(in oklab, var(--colour-accent) 16%, var(--colour-dominant)) 0%, transparent 62%),
+    radial-gradient(110% 100% at 86% 78%, color-mix(in oklab, var(--colour-muted) 12%, var(--colour-dominant)) 0%, transparent 70%),
+    var(--colour-dominant);
+}
+
+/* Fixed, measurable darkening so the on-supporting ink always clears its
+   contrast threshold regardless of where the gradient stops happen to land. */
+.hero-atmosphere__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.15) 60%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+.hero-atmosphere__inner {
+  padding-block: var(--section-gap);
+  display: grid;
+  justify-items: start;
+  gap: var(--space-2);
+}
+
+.hero-atmosphere__kicker {
+  font-size: var(--text-small);
+  font-weight: var(--weight-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-block: 0;
+  opacity: 0.85;
+}
+
+.hero-atmosphere__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display)em;
+  margin-block: 0 var(--space-2);
+  max-width: 20ch;
+}
+
+.hero-atmosphere__sub {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  margin-block: 0 var(--space-4);
+  opacity: 0.92;
+}
+
+.hero-atmosphere__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.hero-atmosphere__ctas > * { min-width: 0; }
+
+.hero-atmosphere__text-link {
+  font-weight: var(--weight-button);
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+/* ── Editorial sections ────────────────────────────────────────────────────
+   Asymmetric grids: a small-caps label in the left margin, a large headline,
+   body copy in a middle column and a list on the right. Mobile-first, so each
+   block is a readable stack until there is width for the real composition. */
+
+/* A bleed section lets its own background and any full-width child run edge to
+   edge. A .container child keeps its inset: the colour field bleeds, the words
+   inside it do not. Without the :not() the container lost its gutter and text
+   sat flush against the viewport edge. */
+.section--bleed { padding-inline: 0; }
+.section--bleed > *:not(.container) { width: 100%; max-width: none; margin-inline: 0; }
+
+.editorial-intro__label,
+.manifesto-band__label,
+.outcomes-band__label,
+.capability-rows__label,
+.work-index__label,
+.client-logos__label {
+  font-size: var(--text-small);
+  font-weight: var(--weight-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--colour-muted);
+  margin-block: 0 var(--space-3);
+}
+
+[data-surface="supporting"] :is(.editorial-intro__label, .manifesto-band__label, .outcomes-band__label, .capability-rows__label, .work-index__label, .client-logos__label) {
+  color: inherit;
+  opacity: 0.72;
+}
+
+.editorial-intro__grid,
+.manifesto-band__grid,
+.outcomes-band__grid,
+.capability-rows__grid,
+.work-index__grid,
+.client-logos__grid {
+  display: grid;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+/* h1 scale, not the hero's display scale. At display scale in these tracks a
+   headline broke mid-word: overflow-wrap:anywhere is the safety net that stops
+   a grid track bursting, and it splits a word that cannot fit, so the scale has
+   to suit the column rather than the wrap mode being loosened. */
+.manifesto-band__headline,
+.outcomes-band__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1)em;
+  margin-block: 0 var(--space-4);
+  max-width: 16ch;
+}
+
+/* The introduction is a normal section, with the same heading hierarchy as
+   services and FAQs. Its label sits above two balanced content columns. */
+.editorial-intro__label { margin-block: 0; }
+.editorial-intro__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
+  margin-block: 0;
+  max-width: none;
+}
+.editorial-intro__body p { margin: 0; max-width: 42ch; }
+
+/* Sits beside its own label in a narrower column, so it takes the step below
+   the intro and manifesto headlines. */
+.capability-rows__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2)em;
+  margin-block: 0 var(--space-4);
+  max-width: 14ch;
+}
+
+.editorial-intro__body p,
+.manifesto-band__body p { margin-block: 0 var(--space-3); }
+
+.editorial-intro__keywords {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-1);
+  font-size: var(--text-small);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--colour-muted);
+}
+
+[data-surface="supporting"] .editorial-intro__keywords { color: inherit; opacity: 0.72; }
+
+.outcomes-band__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.outcomes-band__item {
+  border-inline-start: 1px solid var(--colour-border);
+  padding-inline-start: var(--space-3);
+  min-width: 0;
+}
+
+[data-surface="supporting"] .outcomes-band__item { border-inline-start-color: currentColor; }
+
+.outcomes-band__item-text {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+}
+
+.capability-rows__rows,
+.work-index__rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.capability-rows__row,
+.work-index__row {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+  padding-block-end: var(--space-4);
+  border-block-end: 1px solid var(--colour-border);
+  min-width: 0;
+}
+
+[data-surface="supporting"] :is(.capability-rows__row, .work-index__row) { border-block-end-color: currentColor; }
+
+.capability-rows__num,
+.work-index__num {
+  font-size: var(--text-small);
+  color: var(--colour-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-surface="supporting"] :is(.capability-rows__num, .work-index__num) { color: inherit; opacity: 0.72; }
+
+.capability-rows__name,
+.work-index__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-h3);
+  line-height: var(--leading-h3);
+  margin-block: 0 var(--space-1);
+}
+
+.work-index__title { display: block; }
+/* Body stacks the row title over its description inside the row grid. */
+.capability-rows__body {
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+  min-width: 0;
+}
+.capability-rows__desc,
+.work-index__desc { margin-block: 0; }
+
+.capability-rows__media img,
+.work-index__thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.image-triptych__cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+}
+
+.image-triptych__card {
+  position: relative;
+  display: grid;
+  align-content: end;
+  gap: var(--space-1);
+  min-height: 18rem;
+  padding: var(--space-5);
+  background: var(--colour-supporting);
+  color: var(--colour-on-supporting);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.image-triptych__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-triptych__title,
+.image-triptych__meta { position: relative; z-index: 1; }
+
+/* Card text sits at the foot of the card over the photograph, so a scrim
+   holds the supporting colour behind the words: the bottom of the card
+   is the supporting surface itself, where the on-supporting ink already meets
+   the 4.5:1 contract. Bright and dark photographs were verified in the
+   browser gate (Package 5 fault injection). */
+.image-triptych__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--colour-supporting) 0%, var(--colour-supporting) 38%, transparent 72%);
+  pointer-events: none;
+}
+
+/* Deliberate photo-free fallback: without photographs the cards need no
+   photographic height, and the marker keeps the validator honest about the
+   choice instead of passing silently. */
+.image-triptych--no-photos .image-triptych__card { min-height: auto; }
+.image-triptych--no-photos .image-triptych__card::after { content: none; }
+
+.image-triptych__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-h2);
+  line-height: var(--leading-h2);
+}
+
+.image-triptych__meta {
+  font-size: var(--text-small);
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.client-logos__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.client-logos__item {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  color: var(--colour-muted);
+  min-width: 0;
+}
+
+[data-surface="supporting"] .client-logos__item { color: inherit; }
+
+/* Grid/flex blowout guard for the editorial children. */
+.editorial-intro__grid > *,
+.manifesto-band__grid > *,
+.outcomes-band__grid > *,
+.capability-rows__grid > *,
+.work-index__grid > *,
+.client-logos__grid > *,
+.outcomes-band__items > *,
+.image-triptych__cards > *,
+.capability-rows__row > *,
+.work-index__row > * { min-width: 0; }
+
+/* Mobile-first: single column stacks; wider layouts arrive with width. */
+@media (min-width: 48rem) {
+  .hero-split__inner { grid-template-columns: 1fr 1fr; }
+  .features-grid__cards { grid-template-columns: repeat(2, 1fr); }
+  .founder-story__inner { grid-template-columns: 0.9fr 1.1fr; }
+  .contact-block__inner { grid-template-columns: 1fr 1fr; }
+  .waitlist-capture__row { grid-template-columns: 1fr auto; }
+}
+
+@media (min-width: 64rem) {
+  .features-grid__cards { grid-template-columns: repeat(3, 1fr); }
+  .hero-centered__inner { grid-template-columns: 1.2fr 0.8fr; }
+
+  /* Introduction: quiet label row, then heading and supporting copy. */
+  .editorial-intro__grid { grid-template-columns: 1fr 1fr; column-gap: var(--space-7); row-gap: var(--space-4); }
+  .editorial-intro__label { grid-column: 1 / -1; }
+  .editorial-intro__headline { grid-column: 1; margin-block-end: 0; }
+  .editorial-intro__body { grid-column: 2; }
+  .editorial-intro__keywords { grid-column: 2; }
+
+  .manifesto-band__grid { grid-template-columns: 9rem 1.6fr 1fr; column-gap: var(--space-5); }
+  .manifesto-band__label { grid-column: 1; }
+  .manifesto-band__headline { grid-column: 2; margin-block-end: 0; }
+  .manifesto-band__body { grid-column: 3; }
+
+  .outcomes-band__grid { grid-template-columns: 10rem 1fr; column-gap: var(--space-5); }
+  .outcomes-band__label { grid-column: 1; grid-row: 1; }
+  .outcomes-band__headline { grid-column: 2; grid-row: 1; }
+  .outcomes-band__items { grid-column: 2; grid-row: 2; grid-auto-flow: column; grid-auto-columns: 1fr; }
+
+  .capability-rows__grid { grid-template-columns: 18rem 1fr; grid-template-rows: min-content 1fr; align-content: start; column-gap: var(--space-5); }
+  .capability-rows__label { grid-column: 1; grid-row: 1; }
+  .capability-rows__headline { grid-column: 1; grid-row: 2; align-self: start; margin-block-end: 0; }
+  .capability-rows__rows { grid-column: 2; grid-row: 1 / span 2; }
+  .capability-rows__row { grid-template-columns: 4rem 1fr 12rem; column-gap: var(--space-4); }
+
+  .work-index__grid { grid-template-columns: 10rem 1fr; column-gap: var(--space-5); }
+  .work-index__rows { grid-column: 2; }
+  .work-index__row { grid-template-columns: 4rem 12rem 1fr 10rem; column-gap: var(--space-4); align-items: baseline; }
+
+  .client-logos__grid { grid-template-columns: 10rem 1fr; column-gap: var(--space-5); }
+
+  .image-triptych__cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* structural patches */
+@media (min-width: 700px) { .features-grid__cards:has(.feature-card:nth-child(4)):not(:has(.feature-card:nth-child(5))){ grid-template-columns:repeat(2,1fr); } }
+.hero-centered > p, .hero-centered__inner > p, .site-footer p, .section-heading > p { margin-inline:auto; }
+section { padding-block: clamp(3rem, 6vw, 6rem); }
+main, section, [class*="__inner"] { min-width: 0; max-width: 100%; }
+h1, h2, h3, h4, h5, h6, p { overflow-wrap: anywhere; }
+
+/* header-owned-by-polish-pack */
+/* Polish pack owns this block. The validator checks the marker is present and
+   the rule counts are unchanged. If you change it, run npm test. */
+/* Skip link: off-screen until focused. ucas-0001 shipped a class-less one with
+   no rule anywhere, so "Skip to content" sat on top of the header on every
+   page. Owned here for the same reason the header is. */
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 100; padding: 12px 20px; background: #111827; color: #ffffff; text-decoration: none; }
+.skip-link:focus { left: 0; }
+.site-header { background: #ffffff; border-bottom: 1px solid #11182722; font-family: Archivo; position: relative; }
+.site-header__inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; gap: 24px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: #4b5563; }
+.brand__mark { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: #111827; color: #ffffff; font-family: Petrona; font-weight: 700; font-size: 16px; letter-spacing: 0.02em; }
+.brand__wordmark { font-family: Petrona; font-weight: 600; font-size: 18px; }
+.primary-nav { display: flex; gap: 24px; margin-left: auto; align-items: center; }
+.primary-nav a { color: #4b5563; text-decoration: none; font-size: 15px; }
+.primary-nav a:hover, .primary-nav a:focus { color: #2142e7; }
+.menu-toggle { display: none; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+.menu-toggle__bar { display: block; width: 22px; height: 2px; background: #4b5563; margin: 4px 0; }
+/* launch-minimal: brand + one link, and deliberately no burger to reveal it.
+   The mobile rules below turn .primary-nav into a toggle-revealed panel, which
+   on this mode would hide the only way to reach the waitlist at phone width —
+   the exact failure lib/browser-quality.mjs raises as
+   'launch-minimal-waitlist-invisible'. Higher specificity than the .primary-nav
+   rules below, so it holds at every width regardless of source order. This is a
+   reachability rule, not a styling choice; the mode's appearance is otherwise
+   whatever the shared header rules above give it. */
+.site-header--minimal .primary-nav { position: static; display: flex; padding: 0; border-bottom: 0; box-shadow: none; margin-left: auto; }
+.site-header--minimal .menu-toggle { display: none; }
+@media (max-width: 768px) {
+  .menu-toggle { display: inline-block; }
+  /* Mobile panel: a 1px palette-tinted border-bottom gives the menu a clear end
+     on long link lists, and a palette-aware (primary-with-alpha) shadow keeps
+     the popover inside the brand's own visual world instead of looking like a
+     foreign element stacked on top of the page. The shadow replaces the
+     hardcoded black rgba(0,0,0,0.06) the prior rule shipped, which read as a
+     default browser popover on a designed page. */
+  .primary-nav { position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; flex-direction: column; align-items: stretch; padding: 16px 24px; gap: 12px; display: none; border-bottom: 1px solid #11182722; box-shadow: 0 8px 24px #11182740; }
+  html[data-js="true"] .site-header[data-mobile-nav-open="false"] .primary-nav { display: none; }
+  html[data-js="true"] .site-header[data-mobile-nav-open="true"] .primary-nav { display: flex; }
+}
+html[data-reduced-motion="true"] .site-header, html[data-reduced-motion="true"] .primary-nav { transition: none !important; }
+/* end header-owned-by-polish-pack */
+
